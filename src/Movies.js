@@ -17,7 +17,7 @@ function Movies({genres,movies,setMovies,filtering}) {
         else if(parameter === 'Rating'){
             console.log(`trying to sort by rating`)
             setMovies(movies => {
-                const sortedMovies = movies.sort((a,b) => parseInt(a.vote_average) - parseInt(b.vote_average))
+                const sortedMovies = movies.sort((a,b) => parseFloat(a.vote_average) - parseFloat(b.vote_average))
                 setMovies(sortedMovies)
             })
         }

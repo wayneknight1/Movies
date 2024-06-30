@@ -6,6 +6,10 @@ function Filter({genres,filtering, setFiltering}) {
     const filterHandler = () =>{
         setFiltering({filtering: true, filteringBy: selected})
     }
+
+    const clearFilters = () =>{
+        setFiltering({filtering: false, filteringBy: undefined})
+    }
     return <div className='dropdown-container'>
         <div onClick={() => setOpen(!open)} className='selected-dropdown'>{selected}</div>
         {open && genres.map(genre => {
@@ -13,7 +17,7 @@ function Filter({genres,filtering, setFiltering}) {
                 return <div className='dropdown-option' onClick={() => {setSelected(genre.name); setOpen(false)}}>{genre.name}</div>
         })}
         <button onClick={filterHandler}>Filter Results</button>
-        <button onClick={filterHandler}>Clear Filters</button>
+        <button onClick={clearFilters}>Clear Filters</button>
     </div>
 }
 
