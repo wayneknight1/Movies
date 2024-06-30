@@ -1,0 +1,20 @@
+import React from 'react'
+import { useState } from 'react'
+function Filter({genres,filtering, setFiltering}) {
+    const [open,setOpen] = useState(false)
+    const [selected,setSelected] = useState('Select An Option')
+    const filterHandler = () =>{
+        setFiltering({filtering: true, filteringBy: selected})
+    }
+    return <div className='dropdown-container'>
+        <div onClick={() => setOpen(!open)} className='selected-dropdown'>{selected}</div>
+        {open && genres.map(genre => {
+            if(genre.name !== selected)
+                return <div className='dropdown-option' onClick={() => {setSelected(genre.name); setOpen(false)}}>{genre.name}</div>
+        })}
+        <button onClick={filterHandler}>Filter Results</button>
+        <button onClick={filterHandler}>Clear Filters</button>
+    </div>
+}
+
+export default Filter
