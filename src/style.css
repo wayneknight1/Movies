@@ -1,0 +1,19 @@
+.cell{
+    /* display: flex; */
+    display: inline-flex;
+    width: 150px;
+    height: 80px;
+    border: 1px solid black;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+    font-size: 1rem;
+    padding: 5px;
+    justify-content: center;
+}
+
+.cell-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
