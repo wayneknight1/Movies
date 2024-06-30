@@ -4,11 +4,11 @@ function Filter({genres,filtering, setFiltering}) {
     const [open,setOpen] = useState(false)
     const [selected,setSelected] = useState('Select An Option')
     const filterHandler = () =>{
-        setFiltering({filtering: true, filteringBy: selected})
+        setFiltering({filtering: true, filteringBy: 'Genre', payload: selected})
     }
 
     const clearFilters = () =>{
-        setFiltering({filtering: false, filteringBy: undefined})
+        setFiltering({filtering: false, filteringBy: undefined, payload:''})
     }
     return <div className='dropdown-container'>
         <div onClick={() => setOpen(!open)} className='selected-dropdown'>{selected}</div>

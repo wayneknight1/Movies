@@ -53,9 +53,9 @@ function Movies({genres,movies,setMovies,filtering}) {
             </div>
         })}
 
-        {filtering.filtering && movies?.map(movie => {
+        {filtering.filtering &&filtering.filteringBy === 'Genre'&&movies?.map(movie => {
         const genreName = genres.find(genre => genre.id === movie.genre_ids[0])
-        if(genreName.name === filtering.filteringBy){
+        if(genreName.name === filtering.payload){
             // return movie.original_title
             return <div className='cell-container'>
                 <Cell>{movie.original_title}</Cell> 

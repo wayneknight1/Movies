@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react'
 function App() {
   const [movies,setMovies] = useState([])
   const [genres,setGenres] = useState([])
-  const [filtering, setFiltering] = useState({filteringBy: '', filtering: false})
+  const [filtering, setFiltering] = useState({filteringBy: '', filtering: false, payload: ''})
   useEffect(() =>{
     const options = {
         method: 'GET',
