@@ -1,53 +1,116 @@
-.outer-container{
+/* App container styling */
+.outer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: #f0f0f0;
+  }
+  
+  /* Movies container styling */
+  .movies-container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-top: 20px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cell-container {
     display: flex;
     justify-content: space-between;
-}
-
-
-.cell{
-    /* display: flex; */
-    display: inline-flex;
-    width: 150px;
-    height: 80px;
-    border: 1px solid black;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    align-items: center;
-    font-size: 1rem;
-    padding: 5px;
-    justify-content: center;
-}
-
-.cell-container{
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .movie-cell-container {
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease;
+  }
+  
+  .movie-cell-container:hover {
+    background-color: #e0e0e0;
+  }
+  
+  /* Cell styling */
+  .cell {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  /* Filter container styling */
+  .dropdown-container {
+    width: 80%;
+    margin: 20px 0;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .selected-dropdown {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .dropdown-option {
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    cursor: pointer;
+  }
+  
+  .dropdown-option:hover {
+    background: #f0f0f0;
+  }
+  
+  .filter-button, .clear-button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .filter-button {
+    background: #007bff;
+    color: #fff;
+  }
+  
+  .clear-button {
+    background: #dc3545;
+    color: #fff;
+  }
+  
+  /* YearFilter styling */
+  .years-container {
+    width: 80%;
+    margin: 20px 0;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .year-tile {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .year-tile:hover {
+    background: #f0f0f0;
+  }
+  
+  .headers-container {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.selected-dropdown{
-    width: 150px;
-    height: 20px;
-    font-size: 1rem;
-    padding: 5px;
-    text-align: center;
-    border: 1px solid black;
-    font-weight: bold;
-}
-
-.dropdown-option{
-    width: 150px;
-    height: 20px;
-    font-size: 1rem;
-    padding: 5px;
-    text-align: center;
-    border: 1px solid black;
-}
-
-.year-tile{
-    width: 150px;
-    height: 20px;
-    font-size: 1rem;
-    padding: 5px;
-    text-align: center;
-    border: 1px solid black;
-}
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 2px solid #ccc;
+  }

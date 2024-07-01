@@ -10,7 +10,7 @@ function Movies({genres,movies,setMovies,filtering}) {
                 const parseYear = parseInt(movie.release_date.split('-')[0])
                 return parseYear === parseInt(filtering.payload)
             }).map(movie =>{
-                return <div className='cell-container'>
+                return <div className='cell-container movie-cell-container'>
                     <Cell>{movie.original_title}</Cell> 
                     <Cell>{movie.release_date}</Cell>
                     <Cell>{movie.vote_average}</Cell>
@@ -59,10 +59,12 @@ function Movies({genres,movies,setMovies,filtering}) {
 
     const headers = ['Title','Release Date','Rating','Genre']
   return (
-    <div className='movies-container'>
+    <div className='movies-container '>
+        <div className='headers-container'>
         {headers.map(header => <Cell onClick = {() => sortBy(header)} style ={{fontSize: '1.2rem', fontWeight: 'bold', cursor: 'pointer'}}>{header}</Cell>)}
+        </div>
         {!filtering.filtering && movies?.map(movie => {
-            return <div className='cell-container'>
+            return <div className='cell-container movie-cell-container'>
                 <Cell>{movie.original_title}</Cell> 
                 <Cell>{movie.release_date}</Cell>
                 <Cell>{movie.vote_average}</Cell>
@@ -80,7 +82,7 @@ function Movies({genres,movies,setMovies,filtering}) {
         const genreName = genres.find(genre => genre.id === movie.genre_ids[0])
         if(genreName.name === filtering.payload){
             // return movie.original_title
-            return <div className='cell-container'>
+            return <div className='cell-container movie-cell-container'>
                 <Cell>{movie.original_title}</Cell> 
                 <Cell>{movie.release_date}</Cell>
                 <Cell>{movie.vote_average}</Cell>
