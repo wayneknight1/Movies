@@ -42,3 +42,12 @@
     text-align: center;
     border: 1px solid black;
 }
+
+.year-tile{
+    width: 150px;
+    height: 20px;
+    font-size: 1rem;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid black;
+}

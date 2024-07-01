@@ -1,6 +1,29 @@
 import React from 'react'
 import Cell from './components/Cell'
+import { useEffect } from 'react'
+import { useState } from 'react'
 function Movies({genres,movies,setMovies,filtering}) {
+    const [filteredMoviesByYear, setFilteredMoviesByYear] = useState([]);
+    useEffect(()=>{
+        if(filtering.filtering && filtering.filteringBy==='Year'){
+            setFilteredMoviesByYear(movies.filter(movie => {
+                const parseYear = parseInt(movie.release_date.split('-')[0])
+                return parseYear === parseInt(filtering.payload)
+            }).map(movie =>{
+                return <div className='cell-container'>
+                    <Cell>{movie.original_title}</Cell> 
+                    <Cell>{movie.release_date}</Cell>
+                    <Cell>{movie.vote_average}</Cell>
+                    <Cell>{Array.from(genres).filter(genre => {
+                   if(genre.id === movie.genre_ids[0])
+                        return genre.name
+                   return false
+                })["0"]?.["name"]
+                }</Cell>
+                </div>
+            }))
+        }
+    },[filtering])
     const sortBy = (parameter) =>{
         if(parameter === 'Title'){
             setMovies(movies => {
@@ -65,6 +88,9 @@ function Movies({genres,movies,setMovies,filtering}) {
             </div>
         }
          })}
+
+
+         {filtering.filtering && filtering.filteringBy === 'Year' && filteredMoviesByYear}
     </div>
   )
 }
